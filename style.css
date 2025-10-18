@@ -70,3 +70,24 @@ body, html {
     height: 100%;
     display: block;
 }
+
+.decision , .procedimiento, .entrada, .salida {
+    transition: fill 0.2s;
+}
+
+.decision:hover{
+    fill: #47b5b0;
+    cursor: pointer;
+}
+.procedimiento:hover{
+    fill: #4784b5;
+    cursor: pointer;
+}
+.entrada:hover{
+    fill: #11993c;
+    cursor: pointer;
+}
+.salida:hover{
+    fill: #f39c12;
+    cursor: pointer;
+}
