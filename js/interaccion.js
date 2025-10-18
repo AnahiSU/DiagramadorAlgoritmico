@@ -8,46 +8,70 @@ const figuras = [];
 let figuraSeleccionada = null;
 let offsetX = 0, offsetY = 0;
 
+let tipoFiguraSeleccionada = null;
+let coordenadas = { x: 100, y: 100 };
+
+let id;
+
+const modal = document.getElementById("modal-texto");
+const inputTexto = document.getElementById("input-texto");
+const btnAceptar = document.getElementById("btn-aceptar");
+const btnCancelar = document.getElementById("btn-cancelar");
+
+function mostrarModal() {
+  modal.style.display = "flex";
+  inputTexto.value = "";
+  inputTexto.focus();
+}
 
 document.getElementById("procedimiento").addEventListener("click", () => {
-  const id = "proceso" + (figuras.length + 1);
-  let x = 100;
-  let y = 100;
-  let texto = "Proceso";
-  crearProceso(canvas,x, y, texto, id);
-
-  figuras.push({ id, tipo: "proceso", x, y, width: 120, height: 60, texto });
+  tipoFiguraSeleccionada = "entrada";
+  id = "proceso" + (figuras.length + 1);
+  mostrarModal();
 });
 
 document.getElementById("entrada").addEventListener("click", () => {
-  const id = "proceso" + (figuras.length + 1);
-  let x = 200;
-  let y = 200;
-  let texto = "Entrada"; 
-  crearEntrada(canvas,x, y, texto, id);
-  
-  figuras.push({ id, tipo: "entrada", x, y, width: 120, height: 60, texto });
+  tipoFiguraSeleccionada = "entrada";
+  id = "entrada" + (figuras.length + 1);
+  mostrarModal();
 });
 
 document.getElementById("salida").addEventListener("click", () => {
-  const id = "proceso" + (figuras.length + 1);
-  let x = 300;
-  let y = 300;
-  let texto = "Salida";
-  crearSalida(canvas,x, y, texto, id);
-  
-  figuras.push({ id, tipo: "salida", x, y, width: 120, height: 60, texto });
+  tipoFiguraSeleccionada = "salida";
+  id = "salida" + (figuras.length + 1);
+  mostrarModal();
 });
 
 document.getElementById("decision").addEventListener("click", () => {
-  const id = "proceso" + (figuras.length + 1);
-  let x = 400;
-  let y = 400;
-  let texto = "Decisión";
-  crearDecision(canvas,x, y, texto, id);
-  
-  figuras.push({ id, tipo: "decision", x, y, width: 120, height: 60, texto });
+  tipoFiguraSeleccionada = "decision";
+  id = "decision" + (figuras.length + 1);
+  mostrarModal();
 });
+
+btnAceptar.addEventListener("click",() =>{
+  const texto = inputTexto.value.trim();
+
+  if(!texto) return;
+    
+  if(tipoFiguraSeleccionada === "proceso"){
+    crearProceso(canvas,100,100,texto,id);
+  }else if(tipoFiguraSeleccionada === "entrada"){
+    crearEntrada(canvas,100,100,texto,id);
+  }else if(tipoFiguraSeleccionada === "decision"){
+    crearDecision(canvas,100,100,texto,id);
+  }else if(tipoFiguraSeleccionada === "salida"){
+    crearSalida(canvas,100,100,texto,id);
+  }
+  figuras.push({ tipo: tipoFiguraSeleccionada, texto, x: coordenadas.x, y: coordenadas.y });
+  modal.style.display = "none";
+  console.log(figuras);
+});
+
+btnCancelar.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+
 
 
 function iniciarMovimiento(e) {
