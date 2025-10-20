@@ -474,7 +474,7 @@ async function limpiarAutoguardado() {
   try {
     const doc = await dbManager.db.get('current-diagram');
     await dbManager.db.remove(doc);
-    console.log('🗑️ Autoguardado limpiado');
+    console.log('Autoguardado limpiado');
   } catch (error) {
     console.log('No había autoguardado que limpiar');
   }
