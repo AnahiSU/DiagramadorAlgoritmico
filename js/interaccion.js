@@ -101,7 +101,7 @@ function manejarClicCirculo(e, figura, circulo) {
     
     crearConexion(primerFigura, primerPunto, figura, circulo);
     
-    primerPunto.setAttribute("fill", "#ff4444");
+    primerPunto.setAttribute("fill", "#9efef9ff");
     primerPunto = null;
     primerFigura = null;
   }

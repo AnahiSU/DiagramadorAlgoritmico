@@ -12,7 +12,7 @@ function crearProceso(canvas,x, y, texto, id) {
   rect.setAttribute("height", 60);
   rect.setAttribute("rx", 10);
   rect.setAttribute("ry", 10);
-  rect.setAttribute("fill", "#6EA8FE");
+  rect.setAttribute("fill", "#e6acf2ff");
   rect.setAttribute("stroke", "#333");
   rect.setAttribute("class","procedimiento");
 
@@ -21,7 +21,7 @@ function crearProceso(canvas,x, y, texto, id) {
   text.setAttribute("y", 35); 
   text.setAttribute("text-anchor", "middle");
   text.setAttribute("font-size", "24");
-  text.setAttribute("fill", "#fff");
+  text.setAttribute("fill", "#000000ff");
   text.textContent = texto;
 
   const circle = document.createElementNS(ns, "circle");
