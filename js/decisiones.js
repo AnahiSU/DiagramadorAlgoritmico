@@ -63,12 +63,25 @@ function crearDecision(canvas, x, y, texto, id) {
   circle2.setAttribute("stroke", "#000000ff");
   circle2.setAttribute("stroke-width", "2");
   circle2.style.cursor = "pointer";
+
+  const circle3 = document.createElementNS(ns, "circle");
+  circle3.setAttribute("cx", texto.length*12);
+  circle3.setAttribute("cy", 0);
+  circle3.setAttribute("r", 6);
+  circle3.setAttribute("fill", "#9efef9ff");
+  circle3.setAttribute("stroke", "#000000ff");
+  circle3.setAttribute("stroke-width", "2");
+  circle3.style.cursor = "pointer";
   
   circle.setAttribute('data-posicion', 'superior');
   circle2.setAttribute('data-posicion', 'inferior');
+  circle3.setAttribute('data-posicion', 'medio');
 
   circle2.addEventListener("click", (e) => {
     manejarClicCirculo(e, grupo, circle2);
+  });
+  circle3.addEventListener("click", (e) => {
+    manejarClicCirculo(e, grupo, circle3);
   });
   circle.addEventListener("click", (e) => {
     manejarClicCirculo(e, grupo, circle);
@@ -78,6 +91,7 @@ function crearDecision(canvas, x, y, texto, id) {
   grupo.appendChild(rombo);
   grupo.appendChild(circle);
   grupo.appendChild(circle2);
+  grupo.appendChild(circle3);
   grupo.appendChild(text);
   grupo.appendChild(si);
   grupo.appendChild(no);

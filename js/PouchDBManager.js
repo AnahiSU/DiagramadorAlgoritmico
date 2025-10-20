@@ -10,7 +10,7 @@ export default class PouchDBManager {
       };
       
       localStorage.setItem('flowchart-current-diagram', JSON.stringify(datosGuardar));
-      console.log('Diagrama guardado automáticamente');
+      console.log('Diagrama guardado automaticamente');
       return { ok: true };
     } catch (error) {
       console.error('Error al guardar diagrama:', error);
@@ -26,7 +26,7 @@ export default class PouchDBManager {
         console.log('Diagrama cargado desde autoguardado');
         return parsed.data;
       }
-      console.log('No hay diagrama guardado aún');
+      console.log('No hay diagrama guardado');
       return null;
     } catch (error) {
       console.log('Error cargando autoguardado:', error);

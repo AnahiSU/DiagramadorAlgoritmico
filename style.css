@@ -143,3 +143,40 @@ html {
     justify-content: flex-end;
     gap: 10px;
 }
+
+
+.pizarra {
+  flex: 1;
+  background: #dceeff;
+  position: relative;
+  overflow: auto;
+}
+
+#svg-canva {
+  width: 100%;
+  height: 100%;
+  min-width: 800px;
+  min-height: 600px;
+}
+
+/* Para móviles */
+@media (max-width: 768px) {
+  .pizarra {
+    overflow: auto;
+  }
+  
+  #svg-canva {
+    min-width: 1200px;
+    min-height: 900px;
+  }
+  
+  .toolbar {
+    min-width: 130px;
+    padding: 15px 10px;
+  }
+  
+  .toolbar button {
+    padding: 12px 8px;
+    font-size: 14px;
+  }
+}

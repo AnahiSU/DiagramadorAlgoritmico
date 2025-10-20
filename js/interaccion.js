@@ -79,7 +79,7 @@ btnAceptar.addEventListener("click", () => {
   } else if (tipoFiguraSeleccionada === "salida") {
     nuevaFigura = crearSalida(canvas, 100, 100, texto, id);
   }
-  // Disparar evento de figura creada
+
   document.dispatchEvent(new CustomEvent('figuraCreada'));
   
   modal.style.display = "none";
@@ -106,10 +106,8 @@ function manejarClicCirculo(e, figura, circulo) {
     primerPunto = circulo;
     primerFigura = figura;
     circulo.setAttribute("fill", "#fb0000ff");
-    console.log("Primer punto seleccionado. Haz clic en el segundo punto.");
   } else {
     if (figura === primerFigura && circulo === primerPunto) {
-      console.log("No puedes conectar el mismo punto");
       return;
     }
 
@@ -492,8 +490,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('beforeunload', autoguardar);
   document.addEventListener('figuraCreada', autoguardar);
-  document.addEventListener('conexionCreada', autoguardar);
-  document.addEventListener('figuraMovida', autoguardar);
 });
 
 export {

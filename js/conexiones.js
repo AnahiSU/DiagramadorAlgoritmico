@@ -21,7 +21,7 @@ const configPuntos = {
 function crearPuntosConexion(grupo, tipoFigura, ancho, alto) {
   const puntosGrupo = document.createElementNS(ns, "g");
   puntosGrupo.setAttribute("class", "puntos-conexion");
-  puntosGrupo.style.display = "none"; // Ocultos por defecto
+  puntosGrupo.style.display = "none";
 
   const puntosConfig = configPuntos[tipoFigura] || [];
   
@@ -36,8 +36,7 @@ function crearPuntosConexion(grupo, tipoFigura, ancho, alto) {
     circle.setAttribute("class", `punto-conexion punto-${punto.posicion}`);
     circle.setAttribute("data-posicion", punto.posicion);
     circle.setAttribute("data-id", `${tipoFigura}-${punto.id}`);
-    
-    // Hacer el punto interactivo
+
     circle.style.cursor = "crosshair";
     
     puntosGrupo.appendChild(circle);

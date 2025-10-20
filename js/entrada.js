@@ -7,7 +7,7 @@ function crearEntrada(canvas,x, y, texto, id) {
   grupo.setAttribute("id", id);
   grupo.setAttribute("transform", `translate(${x}, ${y})`);
 
-  const ancho = Math.max(texto.length * 20 + 40, 120);
+  const ancho = Math.max(texto.length * 30 + 50, 130);
   const alto = 60;
 
   const polygon = document.createElementNS(ns, "polygon");
