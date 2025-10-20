@@ -1,4 +1,4 @@
-import { iniciarMovimiento, moverFigura, soltarFigura } from "./interaccion.js";
+import { iniciarMovimiento, moverFigura, soltarFigura, manejarClicCirculo } from "./interaccion.js";
 
 function crearEntrada(canvas,x, y, texto, id) {
   const ns = "http://www.w3.org/2000/svg";
@@ -23,9 +23,22 @@ function crearEntrada(canvas,x, y, texto, id) {
   text.setAttribute("font-size", "24");
   text.setAttribute("fill", "#000000ff");
   text.textContent = texto;
+
+  const circle2 = document.createElementNS(ns, "circle");
+  circle2.setAttribute("cx", texto.length*10);
+  circle2.setAttribute("cy", 60);
+  circle2.setAttribute("r", 6);
+  circle2.setAttribute("fill", "#9efef9ff");
+  circle2.setAttribute("stroke", "#000000ff");
+  circle2.setAttribute("stroke-width", "2");
   
+  circle2.addEventListener("click", (e) => {
+    manejarClicCirculo(e, grupo, circle2);
+  });
+
   grupo.appendChild(rect);
   grupo.appendChild(text);
+  grupo.appendChild(circle2);
   canvas.appendChild(grupo);
 
   grupo.addEventListener("mousedown", iniciarMovimiento);

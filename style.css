@@ -80,7 +80,8 @@ html {
 .decision,
 .procedimiento,
 .entrada,
-.salida {
+.salida,
+.conectar {
     transition: fill 0.2s;
 }
 
