@@ -31,6 +31,7 @@ function crearProceso(canvas,x, y, texto, id) {
   circle.setAttribute("fill", "#9efef9ff");
   circle.setAttribute("stroke", "#000000ff");
   circle.setAttribute("stroke-width", "2");
+  circle.style.cursor = "pointer";
 
   const circle2 = document.createElementNS(ns, "circle");
   circle2.setAttribute("cx", texto.length*10);
@@ -39,7 +40,11 @@ function crearProceso(canvas,x, y, texto, id) {
   circle2.setAttribute("fill", "#9efef9ff");
   circle2.setAttribute("stroke", "#000000ff");
   circle2.setAttribute("stroke-width", "2");
+  circle2.style.cursor = "pointer";
   
+  circle.setAttribute('data-posicion', 'superior');
+  circle2.setAttribute('data-posicion', 'inferior');
+
   circle2.addEventListener("click", (e) => {
     manejarClicCirculo(e, grupo, circle2);
   });

@@ -35,11 +35,12 @@ function crearEntrada(canvas,x, y, texto, id) {
   circle2.setAttribute("cx", ancho / 2);
   circle2.setAttribute("cy", alto);
   circle2.setAttribute("r", 6);
-  circle2.setAttribute("fill", "#ff4444");
+  circle2.setAttribute("fill", "#9efef9ff");
   circle2.setAttribute("stroke", "#000000ff");
   circle2.setAttribute("stroke-width", "2");
   circle2.style.cursor = "pointer";
-  
+  circle2.setAttribute('data-posicion', 'inferior');
+
   circle2.addEventListener("click", (e) => {
     manejarClicCirculo(e, grupo, circle2);
   });

@@ -33,11 +33,13 @@ function crearSalida(canvas,x, y, texto, id) {
   circle.setAttribute("cx", ancho / 2);
   circle.setAttribute("cy", 0);
   circle.setAttribute("r", 6);
-  circle.setAttribute("fill", "#ff4444");
+  circle.setAttribute("fill", "#9efef9ff");
   circle.setAttribute("stroke", "#000000ff");
   circle.setAttribute("stroke-width", "2");
   circle.style.cursor = "pointer";
 
+  circle.setAttribute('data-posicion', 'superior');
+  
   circle.addEventListener("click", (e) => {
     manejarClicCirculo(e, grupo, circle);
   });
