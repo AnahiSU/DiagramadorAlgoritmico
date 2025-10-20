@@ -60,6 +60,10 @@ document.getElementById("eliminar").addEventListener("click",()=>{
   limpiarTodo();
 })
 
+document.getElementById("guardar").addEventListener("click",()=>{
+  autoguardar();
+})
+
 btnAceptar.addEventListener("click", () => {
   const texto = inputTexto.value.trim();
 

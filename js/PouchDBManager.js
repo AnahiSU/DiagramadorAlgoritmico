@@ -1,7 +1,5 @@
 export default class PouchDBManager {
   constructor() {
-    // No necesitamos inicializar PouchDB
-    console.log('✅ Autoguardado con localStorage activado');
   }
 
   async saveDiagram(diagramData) {
@@ -12,7 +10,7 @@ export default class PouchDBManager {
       };
       
       localStorage.setItem('flowchart-current-diagram', JSON.stringify(datosGuardar));
-      console.log('💾 Diagrama guardado automáticamente');
+      console.log('Diagrama guardado automáticamente');
       return { ok: true };
     } catch (error) {
       console.error('Error al guardar diagrama:', error);
@@ -25,7 +23,7 @@ export default class PouchDBManager {
       const datosGuardados = localStorage.getItem('flowchart-current-diagram');
       if (datosGuardados) {
         const parsed = JSON.parse(datosGuardados);
-        console.log('📂 Diagrama cargado desde autoguardado');
+        console.log('Diagrama cargado desde autoguardado');
         return parsed.data;
       }
       console.log('No hay diagrama guardado aún');
@@ -39,7 +37,7 @@ export default class PouchDBManager {
   async clearDiagram() {
     try {
       localStorage.removeItem('flowchart-current-diagram');
-      console.log('🗑️ Autoguardado limpiado');
+      console.log('Autoguardado limpiado');
       return { ok: true };
     } catch (error) {
       console.error('Error limpiando autoguardado:', error);

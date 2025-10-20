@@ -75,6 +75,15 @@ html {
     border-color: #dceeff;
 }
 
+#eliminar{
+    background-color: #d9786d;
+}
+
+#eliminar:hover{
+    background-color: #982d22;
+}
+
+
 #svg-canva {
     width: 100%;
     height: 100%;
